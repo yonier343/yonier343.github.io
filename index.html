@@ -1,4 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio Personal - Desarrollador</title>
+  <style>
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000; /* black background */
+      color: #eee;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+    }
+    a {
+      color: #90caf9;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #42a5f5;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #121212;
+      border-bottom: 1px solid #222;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    }
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      color: #90caf9;
+      user-select: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    nav ul li {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 6.5rem auto 3rem; /* top margin for fixed header offset */
+      padding: 0 1.5rem;
+    }
+    /* Section headings */
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #42a5f5;
+      padding-bottom: 0.3rem;
+      font-weight: 700;
+    }
+
+    /* Inicio section style */
+    #inicio {
+      text-align: center;
+      padding-top: 3rem;
+    }
+    #inicio h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 900;
+      color: #90caf9;
+    }
+    #inicio p {
+      font-size: 1.25rem;
+      max-width: 650px;
+      margin: 20px auto 0 auto;
+      color: #ddd;
+    }
+
+    /* Proyecto section style */
+    #proyecto .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 1.8rem;
+      margin-top: 1.5rem;
+    }
+    .project-card {
+      background: #181818;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 1.2rem;
+      box-shadow: 0 0 5px #42a5f5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 5px 15px #42a5f5aa;
+    }
+    .project-card h3 {
+      color: #90caf9;
+      margin-bottom: 0.7rem;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+    }
+    .project-card p {
+      flex-grow: 1;
+      color: #ccc;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .project-card a {
+      align-self: flex-start;
+      font-weight: 600;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 0.15rem;
+    }
+    .project-card a:hover {
+      border-bottom: 1px solid #42a5f5;
+    }
+
+    /* Experiencia section style */
+    #experiencia .experience-item {
+      background: #181818;
+      border: 1px solid #333;
+      padding: 1rem 1.2rem;
+      border-radius: 8px;
+      margin-bottom: 1.3rem;
+      box-shadow: 0 0 5px #42a5f5;
+    }
+    .experience-item h4 {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #90caf9;
+      margin-bottom: 0.3rem;
+    }
+    .experience-item span.duration {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #bbb;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .experience-item p {
+      color: #ccc;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    /* Footer */
+    footer {
+      margin: 3rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      user-select: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      nav ul {
+        gap: 1rem;
+      }
+      #inicio h1 {
+        font-size: 2rem;
+      }
+      #inicio p {
+        font-size: 1rem;
+      }
+      section {
+        margin-top: 5.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Mi Portafolio</div>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#proyecto">Proyecto</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" aria-label="Inicio">
+      <h1>Hola, soy [Tu Nombre]</h1>
+      <p>Desarrollador apasionado de software especializado en crear soluciones modernas, funcionales y elegantes.</p>
     </section>
+
+    <section id="proyecto" aria-label="Proyectos">
+      <h2>Proyectos Destacados</h2>
+      <div class="project-list">
+        <article class="project-card">
+          <h3>Proyecto 1 - Sitio Web Corporativo</h3>
+          <p>Desarrollo completo con HTML, CSS y JavaScript moderno para presencia online profesional.</p>
+          <a href="#" target="_blank" rel="noopener noreferrer">Ver más</a>
+        </article>
+        <article class="project-card">
+          <h3>Proyecto 2 - App Móvil</h3>
+          <p>Aplicación móvil multiplataforma para gestión de tareas con interfaz intuitiva.</p>
+          <a href="#" target="_blank" rel="noopener noreferrer">Ver más</a>
+        </article>
+        <article class="project-card">
+          <h3>Proyecto 3 - API RESTful</h3>
+          <p>API robusta y segura para operaciones backend con autenticación y manejo de datos.</p>
+          <a href="#" target="_blank" rel="noopener noreferrer">Ver más</a>
+        </article>
+      </div>
+    </section>
+
     <section id="experiencia" aria-label="Experiencia Laboral">
       <h2>Experiencia</h2>
       <div class="experience-item">
@@ -18,8 +253,10 @@
       </div>
     </section>
   </main>
+
   <footer>
     &copy; 2024 [Tu Nombre]. Todos los derechos reservados.
   </footer>
 </body>
 </html>
+
